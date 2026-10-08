@@ -1,0 +1,310 @@
+/* LittleShqiponja audio companion — mobile-first, phone-width, large touch
+   targets, system font stack, no external requests. */
+
+:root {
+  --ink: #22252a;
+  --ink-soft: #565b64;
+  --paper: #fffaf3;
+  --card: #ffffff;
+  --accent: #c0392b;
+  --accent-ink: #ffffff;
+  --line: #e7ddc9;
+  --radius: 14px;
+  --max-w: 480px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.45;
+}
+
+.wrap {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 20px 16px 40px;
+}
+
+a {
+  color: var(--accent);
+}
+
+h1, h2, h3 {
+  line-height: 1.2;
+  margin: 0 0 8px;
+}
+
+p {
+  margin: 0 0 14px;
+}
+
+.muted {
+  color: var(--ink-soft);
+  font-size: 0.95em;
+}
+
+/* Big touch-friendly play button */
+.play-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  min-height: 64px;
+  margin: 18px 0;
+  padding: 14px 20px;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--accent-ink);
+  background: var(--accent);
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+}
+
+.play-btn:active {
+  opacity: 0.85;
+}
+
+.play-btn[disabled] {
+  background: #b9b2a3;
+  cursor: not-allowed;
+}
+
+.play-btn .icon {
+  font-size: 1.3em;
+}
+
+audio {
+  display: none;
+}
+
+/* Letter page */
+.letter-pair {
+  font-size: clamp(3.5rem, 22vw, 6rem);
+  font-weight: 800;
+  text-align: center;
+  margin: 4px 0 0;
+  letter-spacing: 0.02em;
+}
+
+.letter-illustration {
+  display: block;
+  width: 60%;
+  max-width: 220px;
+  margin: 12px auto;
+}
+
+.card-word {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 4px 0 2px;
+}
+
+.card-word-en {
+  text-align: center;
+  color: var(--ink-soft);
+  margin: 0 0 4px;
+}
+
+.sound-hint {
+  text-align: center;
+  margin: 0 0 8px;
+}
+
+.nav-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.nav-row a {
+  flex: 1;
+  text-align: center;
+  padding: 12px 10px;
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  text-decoration: none;
+  color: var(--ink);
+  background: var(--card);
+}
+
+.nav-row .spacer {
+  flex: 1;
+  visibility: hidden;
+}
+
+.back-home {
+  display: block;
+  text-align: center;
+  margin-top: 18px;
+}
+
+/* Index page */
+.intro {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 14px 16px;
+  margin-bottom: 18px;
+}
+
+.letter-list {
+  list-style: none;
+  margin: 0 0 24px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.letter-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 10px 12px;
+}
+
+.letter-row .letter-chip {
+  flex: 0 0 auto;
+  width: 52px;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+
+.letter-row .letter-info {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.letter-row .letter-info a {
+  text-decoration: none;
+  color: var(--ink);
+  font-weight: 700;
+  display: block;
+}
+
+.letter-row .letter-info .letter-meta {
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+}
+
+.letter-row .row-play {
+  flex: 0 0 auto;
+  min-height: 44px;
+  min-width: 44px;
+  border-radius: 50%;
+  border: none;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-size: 1.1rem;
+}
+
+.letter-row .row-play[disabled] {
+  background: #b9b2a3;
+}
+
+.section-title {
+  margin-top: 28px;
+}
+
+.link-list {
+  list-style: none;
+  margin: 0 0 20px;
+  padding: 0;
+}
+
+.link-list li {
+  margin-bottom: 10px;
+}
+
+.link-list a {
+  display: block;
+  padding: 12px 14px;
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--card);
+  text-decoration: none;
+  color: var(--ink);
+  font-weight: 600;
+}
+
+/* Story page */
+.story-title-sq {
+  text-align: center;
+  margin-bottom: 0;
+}
+
+.story-title-en {
+  text-align: center;
+  color: var(--ink-soft);
+  margin-bottom: 12px;
+}
+
+.story-illustration {
+  display: block;
+  width: 55%;
+  max-width: 200px;
+  margin: 12px auto;
+}
+
+.story-lines {
+  margin: 16px 0;
+}
+
+.story-line {
+  margin-bottom: 14px;
+}
+
+.story-line .sq {
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.story-line .en {
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+}
+
+footer {
+  margin-top: 32px;
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+}
+
+footer a {
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.not-ready {
+  text-align: center;
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+  margin-top: -8px;
+}
