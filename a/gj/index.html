@@ -14,7 +14,10 @@
 <p class="card-word">gjel</p>
 <p class="card-word-en muted">rooster</p>
 <p class="sound-hint muted">softer than Xh: middle of tongue on the palate</p>
-<button class="play-btn" type="button" disabled>Audio nuk është gati &middot; Audio not ready</button>
+<button class="play-btn" type="button" onclick="var a=document.getElementById('clip');a.currentTime=0;a.play();">
+  <span class="icon">&#128266;</span> Dëgjo &middot; Listen
+</button>
+<audio id="clip" src="/clips/gj.mp3" preload="none"></audio>
 <div class="nav-row">
 <a href="https://littleshqiponja.github.io/a/g/">&larr; G g</a>
 <a href="https://littleshqiponja.github.io/a/h/">H h &rarr;</a>

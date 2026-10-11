@@ -14,7 +14,10 @@
 <p class="card-word">arush</p>
 <p class="card-word-en muted">bear</p>
 <p class="sound-hint muted">a as in father</p>
-<button class="play-btn" type="button" disabled>Audio nuk është gati &middot; Audio not ready</button>
+<button class="play-btn" type="button" onclick="var a=document.getElementById('clip');a.currentTime=0;a.play();">
+  <span class="icon">&#128266;</span> Dëgjo &middot; Listen
+</button>
+<audio id="clip" src="/clips/a.mp3" preload="none"></audio>
 <div class="nav-row">
 <span class="spacer"></span>
 <a href="https://littleshqiponja.github.io/a/i/">I i &rarr;</a>

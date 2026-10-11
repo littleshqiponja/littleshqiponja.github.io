@@ -14,7 +14,10 @@
 <p class="card-word">ujë</p>
 <p class="card-word-en muted">water</p>
 <p class="sound-hint muted">oo as in moon</p>
-<button class="play-btn" type="button" disabled>Audio nuk është gati &middot; Audio not ready</button>
+<button class="play-btn" type="button" onclick="var a=document.getElementById('clip');a.currentTime=0;a.play();">
+  <span class="icon">&#128266;</span> Dëgjo &middot; Listen
+</button>
+<audio id="clip" src="/clips/u.mp3" preload="none"></audio>
 <div class="nav-row">
 <a href="https://littleshqiponja.github.io/a/o/">&larr; O o</a>
 <a href="https://littleshqiponja.github.io/a/ee/">Ë ë &rarr;</a>
